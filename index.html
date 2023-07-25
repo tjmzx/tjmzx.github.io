@@ -32,8 +32,8 @@
           <h3 class="display-5 fw-bold text-secondary">
         <p>&nbsp;Résumé · James Wright<br></p>
       </div>
-        <img class="rounded-lg-3" src="../assets/brand/9877x240x320.png" alt="" width="240">
     </div>
+
   
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="check2" viewBox="0 0 16 16">
@@ -50,6 +50,105 @@
         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
       </symbol>
     </svg>
+
+    <div style = "text-align:center;">
+      <canvas id="myCanvas" width="216" height="288" style="border:1px solid #c3c3c3;">
+        Your browser does not support the canvas element.
+      </canvas>
+      
+      <script type="application/javascript">
+          var canvas = document.getElementById("myCanvas");
+          var ctx = canvas.getContext("2d");
+          
+          var map = {
+            cols: 18,
+            rows: 24,
+            tsize: 12,
+            tiles: [
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 5, 8, 9, 8, 5, 4, 6, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 4, 8, 9, 9, 9, 9, 8, 7, 6, 1, 1, 1, 1, 1,
+            1, 1, 1, 6, 7, 8, 9, 9, 9, 9, 8, 9, 8, 6, 5, 1, 1, 1,
+            1, 1, 1, 7, 8, 9, 8, 8, 5, 7, 5, 4, 8, 8, 7, 3, 1, 1,
+            1, 1, 6, 8, 9, 6, 3, 2, 2, 2, 1, 2, 2, 8, 5, 1, 1, 1,
+            1, 1, 1, 8, 9, 6, 2, 1, 2, 2, 1, 2, 3, 9, 9, 1, 1, 1,
+            1, 1, 1, 8, 9, 7, 1, 2, 2, 1, 1, 2, 3, 9, 9, 5, 1, 1,
+            1, 1, 1, 8, 9, 6, 3, 2, 2, 3, 2, 3, 4, 8, 9, 4, 1, 1,
+            1, 1, 1, 8, 9, 7, 4, 5, 2, 1, 2, 2, 2, 8, 8, 1, 1, 1,
+            1, 1, 1, 5, 8, 6, 7, 7, 9, 3, 9, 8, 6, 7, 8, 1, 1, 1,
+            1, 1, 1, 3, 8, 5, 8, 5, 6, 1, 8, 4, 5, 3, 5, 1, 1, 1,
+            1, 1, 1, 2, 5, 3, 1, 4, 3, 3, 3, 2, 1, 2, 1, 1, 1, 1,
+            1, 1, 1, 1, 3, 3, 1, 3, 5, 2, 3, 2, 1, 2, 1, 1, 1, 1,
+            1, 1, 1, 1, 2, 3, 3, 4, 2, 4, 5, 2, 2, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 2, 3, 4, 6, 2, 3, 3, 4, 5, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 8, 7, 6, 3, 2, 3, 4, 4, 7, 3, 1, 1, 1,
+            1, 1, 1, 1, 1, 8, 4, 5, 4, 6, 5, 6, 7, 8, 1, 1, 1, 1,
+            1, 1, 1, 1, 3, 8, 8, 8, 6, 8, 9, 6, 5, 9, 6, 1, 1, 1,
+            1, 1, 1, 7, 8, 9, 9, 9, 8, 4, 7, 8, 9, 9, 8, 7, 1, 1,
+            1, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 8,
+            8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+            9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,
+            9, 9, 9, 9, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9
+            ],
+            getTile: function(col, row) {
+              return this.tiles[row * map.cols + col];
+            }
+          };
+          
+          console.log("drawing tilemap");
+          
+          draw_map();
+          
+          function draw_map() {
+            console.log("hey its working!");
+          
+          
+            for (let column = 0; column < map.cols; column++) {
+                                           // ^^^ it's 'cols', not 'columns'
+              for (let row = 0; row < map.rows; row++) {
+                console.log("its tiling time");
+                const tile = map.getTile(column, row);
+                const x = column * map.tsize; // <- 'tsize', not 'tileSize'
+                const y = row * map.tsize;    // <-
+                drawTile(tile, x, y);
+              }
+            }
+          }
+          
+          function drawTile(tile, X, Y) {
+            console.log("picking color"); // 'console.log', not 'print'
+            if (tile === 1) {
+              ctx.fillStyle = "#E6E6EC";
+            }
+            if (tile === 2) {
+              ctx.fillStyle = "#CECECE";
+            }
+            if (tile === 3) {
+              ctx.fillStyle = "#B2B2B2";
+            }
+            if (tile === 4) {
+              ctx.fillStyle = "#828385";
+            }
+            if (tile === 5) {
+              ctx.fillStyle = "#68686C";
+            }
+            if (tile === 6) {
+              ctx.fillStyle = "#4D4D50";
+            }
+            if (tile === 7) {
+              ctx.fillStyle = "#3C3C3E";
+            }
+            if (tile === 8) {
+              ctx.fillStyle = "#242425";
+            }
+            if (tile === 9) {
+              ctx.fillStyle = "#121212";
+            }
+            ctx.fillRect(X, Y, map.tsize, map.tsize); // again, 'tsize'
+          }
+      </script>
+      
+    </div>
     
     <!-- PROFILE -->
     
